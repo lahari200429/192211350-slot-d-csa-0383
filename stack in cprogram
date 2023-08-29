@@ -1,0 +1,38 @@
+#include<stdio.h>
+#include<conio.h>
+#include<stdlib.h>
+#define MAX_SIZE 100
+int stack[MAX_SIZE];
+int top=-1;
+void push(int data){
+if(top==MAX_SIZE-1){
+printf("error:stackoverflow\n");
+return;
+}
+stack[++top]=data;
+}
+void pop(){
+if(top==-1){
+printf("error;stack underflow\n");
+return ;
+}
+top--;
+}
+int peak(){
+if(top==-1){
+printf("error:stack is empty\n");
+return -1;
+}
+return stack[top];
+}
+int main()
+{
+push(1);
+push(2);
+push(3);
+printf("top element is:%d\n",peek());
+pop();
+printf("top element after pop is%d\n",peek());
+getch();
+return 0;
+}
