@@ -1,0 +1,35 @@
+#include<stdio.h>
+ #include<conio.h>
+ int insertion_sort(int A[],int n)
+ {
+ int i,j,temp;
+
+ for(i=0;i<n;i++)
+ {
+ j=1;
+ while(j>0 && A[j]<A[j-1])
+ {
+ temp=A[j-1];
+ A[j-1]=A[j];
+ A[j]=temp;
+ j=i;
+ }
+ }
+ return 0;
+ }
+ int main()
+ {
+ int i,n,A[100];
+ clrscr();
+ printf("%d\n enter n:");
+ scanf("%d",&n);
+ printf("\n enter array element:");
+ for(i=0;i<n;i++)
+ scanf("%d",&A[i]);
+ insertion__sort (A,n);
+ printf("\n after sorting:\n");
+ for(i=0;i<n;i++)
+ printf("%d",A[i]);
+ getch();
+ return 0;
+ }
